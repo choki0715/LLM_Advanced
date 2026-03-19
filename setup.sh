@@ -102,7 +102,7 @@ print_ok "패키지 설치 완료"
 
 # ----- 7. Jupyter 커널 등록 -----
 print_step "Jupyter 커널 등록"
-pip install ipykernel -q
+pip install ipykernel
 python -m ipykernel install --user --name venv --display-name "Python (LLM)"
 print_ok "커널 'Python (LLM)' 등록 완료"
 
@@ -121,7 +121,7 @@ python -c "
 import torch
 if torch.cuda.is_available():
     name = torch.cuda.get_device_name(0)
-    vram = torch.cuda.get_device_properties(0).total_mem / 1024**3
+    vram = torch.cuda.get_device_properties(0).total_memory / 1024**3
     print(f'  GPU: {name}')
     print(f'  VRAM: {vram:.1f} GB')
     print(f'  CUDA: {torch.version.cuda}')
