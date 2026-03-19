@@ -1,0 +1,141 @@
+#!/bin/bash
+# ===========================================
+# LLM 파인튜닝 실습 환경 자동 설정 스크립트
+# 사용법: bash setup.sh
+# ===========================================
+
+set -e
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+print_step() { echo -e "\n${GREEN}[STEP]${NC} $1"; }
+print_warn() { echo -e "${YELLOW}[WARNING]${NC} $1"; }
+print_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+print_ok() { echo -e "${GREEN}[OK]${NC} $1"; }
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
+echo "==========================================="
+echo "  LLM 파인튜닝 실습 환경 설정"
+echo "==========================================="
+
+# ----- 1. Python 확인 -----
+print_step "Python 버전 확인"
+if command -v python3 &> /dev/null; then
+    PY_VERSION=$(python3 --version 2>&1)
+    print_ok "$PY_VERSION"
+else
+    print_error "python3이 설치되어 있지 않습니다."
+    exit 1
+fi
+
+# ----- 2. 가상환경 생성 -----
+print_step "가상환경 생성 (venv)"
+if [ -d "venv" ]; then
+    print_warn "venv가 이미 존재합니다. 기존 환경을 사용합니다."
+else
+    python3 -m venv venv
+    print_ok "venv 생성 완료"
+fi
+
+# ----- 3. 가상환경 활성화 -----
+print_step "가상환경 활성화"
+source venv/bin/activate
+print_ok "활성화 완료 ($(which python))"
+
+# ----- 4. pip 업그레이드 -----
+print_step "pip 업그레이드"
+pip install --upgrade pip -q
+
+# ----- 5. PyTorch 설치 (CUDA) -----
+print_step "PyTorch 설치 (CUDA 12.1)"
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 -q
+print_ok "PyTorch 설치 완료"
+
+# ----- 6. 필수 패키지 설치 (vllm 제외) -----
+print_step "필수 패키지 설치"
+pip install \
+    transformers>=4.40.0 \
+    accelerate>=0.28.0 \
+    datasets>=2.18.0 \
+    peft>=0.10.0 \
+    trl>=0.8.0 \
+    bitsandbytes>=0.43.0 \
+    langchain>=0.1.0 \
+    langchain-openai>=0.1.0 \
+    langchain-community>=0.0.20 \
+    langchain-chroma>=0.1.0 \
+    chromadb>=0.4.0 \
+    openai>=1.12.0 \
+    tiktoken>=0.6.0 \
+    pandas>=2.0.0 \
+    numpy>=1.24.0 \
+    ragas>=0.1.0 \
+    matplotlib>=3.7.0 \
+    streamlit>=1.32.0 \
+    python-dotenv>=1.0.0 \
+    tqdm>=4.66.0 \
+    huggingface-hub>=0.22.0 \
+    -q
+print_ok "패키지 설치 완료"
+
+# ----- 7. Jupyter 커널 등록 -----
+print_step "Jupyter 커널 등록"
+pip install ipykernel -q
+python -m ipykernel install --user --name venv --display-name "Python (LLM)"
+print_ok "VS Code에서 커널 'Python (LLM)' 을 선택하세요"
+
+# ----- 8. .env 파일 생성 -----
+print_step ".env 파일 확인"
+if [ -f ".env" ]; then
+    print_warn ".env 파일이 이미 존재합니다. 건너뜁니다."
+else
+    cp .env.example .env
+    print_ok ".env 파일 생성 완료 — API 키를 입력해주세요: .env"
+fi
+
+# ----- 9. GPU 점검 -----
+print_step "GPU 점검"
+python -c "
+import torch
+if torch.cuda.is_available():
+    name = torch.cuda.get_device_name(0)
+    vram = torch.cuda.get_device_properties(0).total_mem / 1024**3
+    print(f'  GPU: {name}')
+    print(f'  VRAM: {vram:.1f} GB')
+    print(f'  CUDA: {torch.version.cuda}')
+else:
+    print('  GPU를 찾을 수 없습니다!')
+"
+
+# ----- 10. 설치 확인 -----
+print_step "설치된 주요 패키지 확인"
+python -c "
+import importlib
+pkgs = ['torch','transformers','peft','trl','datasets','accelerate','bitsandbytes',
+        'langchain','openai','chromadb','tiktoken','streamlit']
+for p in pkgs:
+    try:
+        m = importlib.import_module(p)
+        v = getattr(m, '__version__', 'OK')
+        print(f'  {p:20s} {v}')
+    except ImportError:
+        print(f'  {p:20s} NOT INSTALLED')
+"
+
+echo ""
+echo "==========================================="
+echo "  설정 완료!"
+echo "==========================================="
+echo ""
+echo "  다음 단계:"
+echo "  1. .env 파일에 API 키 입력"
+echo "     - OPENAI_API_KEY=sk-..."
+echo "     - HF_TOKEN=hf_..."
+echo "  2. VS Code에서 커널 'Python (LLM)' 선택"
+echo "  3. setup_check.ipynb 실행하여 최종 점검"
+echo ""
