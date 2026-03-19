@@ -20,9 +20,9 @@ bitsandbytes>=0.43.0
 vllm>=0.4.0  # GPU 클라우드 전용
 
 # LangChain & RAG
-langchain>=0.1.0
+langchain>=0.3.0,<1.0.0
 langchain-openai>=0.1.0
-langchain-community>=0.0.20
+langchain-community>=0.0.20,<1.0.0
 langchain-chroma>=0.1.0
 chromadb>=0.4.0
 

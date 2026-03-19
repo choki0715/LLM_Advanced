@@ -88,9 +88,9 @@ pip install \
     "peft>=0.10.0" \
     "trl>=0.8.0" \
     "bitsandbytes>=0.43.0" \
-    "langchain>=0.1.0" \
+    "langchain>=0.3.0,<1.0.0" \
     "langchain-openai>=0.1.0" \
-    "langchain-community>=0.0.20" \
+    "langchain-community>=0.0.20,<1.0.0" \
     "langchain-chroma>=0.1.0" \
     "chromadb>=0.4.0" \
     "openai>=1.12.0" \
