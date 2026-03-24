@@ -75,17 +75,15 @@ source venv/bin/activate
 
 ---
 
-## 커리큘럼 (총 36개 노트북)
+## 커리큘럼 (총 36개 노트북, 5 Parts)
 
-| Part | 주제 | 노트북 | GPU |
-|------|------|--------|-----|
-| **Part 1** | 기초 (API/프롬프트) | 01~04 | 불필요 |
-| **Part 2** | 모델 서빙 & RAG | 05~11 | 일부 필요 |
-| **Part 3** | 파인튜닝 이론 | 12~15 | 일부 필요 |
-| **Part 4** | 파인튜닝 실습 | 16~24 | 필요 |
-| **Part 5** | 강화학습 | 25~28 | 필요 |
-| **Part 6** | 배포 & 평가 | 29~31 | 일부 필요 |
-| **Part 7** | 프로젝트 | 32~36 | 필요 |
+| Part | 폴더 | 주제 | 노트북 | GPU |
+|------|------|------|--------|-----|
+| **Part 1** | `part1_basics/` | 기초, API, 모델 서빙 | 01~06 | 일부 필요 |
+| **Part 2** | `part2_serving_rag_sft/` | RAG, 파인튜닝 이론 | 07~15 | 일부 필요 |
+| **Part 3** | `part3_finetuning_tool_calling/` | 파인튜닝 실습, Tool Calling | 16~24 | 필요 |
+| **Part 4** | `part4_reinforcement_quant_deployment/` | 강화학습, 양자화, 배포 | 25~31 | 필요 |
+| **Part 5** | `part5_project/` | 프로젝트 | 32~36 | 필요 |
 
 ---
 
@@ -93,18 +91,16 @@ source venv/bin/activate
 
 ```
 LLM_Lecture/
-├── setup.sh                 # 환경 자동 설정 스크립트
-├── setup_check.ipynb        # 환경 점검 노트북
-├── .env.example             # API 키 템플릿
-├── data/samples/            # 실습용 샘플 데이터
-├── utils/                   # 유틸리티 (GPU 모니터링 등)
-├── part1_basics/            # 01~04
-├── part2_serving_rag/       # 05~11
-├── part3_finetuning_theory/ # 12~15
-├── part4_finetuning_practice/ # 16~24
-├── part5_reinforcement_learning/ # 25~28
-├── part6_deployment/        # 29~31
-└── part7_project/           # 32~36
+├── setup.sh                              # 환경 자동 설정 스크립트
+├── setup_check.ipynb                     # 환경 점검 노트북
+├── .env.example                          # API 키 템플릿
+├── data/samples/                         # 실습용 샘플 데이터
+├── utils/                                # 유틸리티 (GPU 모니터링 등)
+├── part1_basics/                         # 01~06: 기초, API, 모델 서빙
+├── part2_serving_rag_sft/                # 07~15: RAG, 파인튜닝 이론
+├── part3_finetuning_tool_calling/        # 16~24: 파인튜닝 실습, Tool Calling
+├── part4_reinforcement_quant_deployment/ # 25~31: 강화학습, 양자화, 배포
+└── part5_project/                        # 32~36: 프로젝트
 ```
 
 ---

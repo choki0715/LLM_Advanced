@@ -105,6 +105,7 @@ pip install \
     "python-dotenv>=1.0.0" \
     "tqdm>=4.66.0" \
     "huggingface-hub>=0.22.0" \
+    "rank_bm25>=0.2.2" \
     "vllm" \
     -q
 print_ok "패키지 설치 완료"
