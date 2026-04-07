@@ -12,8 +12,14 @@ peft>=0.10.0
 trl>=0.8.0
 bitsandbytes>=0.43.0
 
+# DeepSpeed (Part 3 보너스 - 멀티 GPU FFT)
+deepspeed>=0.14.0
+
 # Unsloth (Part 4)
-# pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+unsloth
+
+# GGUF (Part 6 양자화)
+llama-cpp-python
 
 # LLM Serving
 # ollama는 별도 설치: https://ollama.com
@@ -40,6 +46,9 @@ numpy>=1.24.0
 
 # Evaluation
 ragas>=0.1.0
+nltk>=3.8.0
+rouge-score>=0.1.2
+bert-score>=0.3.13
 
 # Visualization
 matplotlib>=3.7.0

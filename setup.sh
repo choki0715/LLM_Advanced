@@ -106,6 +106,12 @@ pip install \
     "tqdm>=4.66.0" \
     "huggingface-hub>=0.22.0" \
     "rank_bm25>=0.2.2" \
+    "deepspeed>=0.14.0" \
+    "unsloth" \
+    "llama-cpp-python" \
+    "nltk" \
+    "rouge-score" \
+    "bert-score" \
     "vllm" \
     -q
 print_ok "패키지 설치 완료"

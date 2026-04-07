@@ -1,0 +1,10 @@
+{
+  "zero_stage": 2,
+  "training_loss": 1.1493764221668243,
+  "elapsed_seconds": 21.2,
+  "gpu_memory": [
+    "17.3GB",
+    "0.0GB"
+  ],
+  "num_gpus": 2
+}

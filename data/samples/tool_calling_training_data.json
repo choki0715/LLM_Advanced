@@ -1,0 +1,1202 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "김철수 학생 정보 좀 알려줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=김철수>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"김철수\", \"id\": \"S2024-001\", \"course\": \"LLM 파인튜닝\", \"progress\": 75}"
+      },
+      {
+        "role": "assistant",
+        "content": "김철수 학생(S2024-001)은 'LLM 파인튜닝' 과정을 수강 중이며, 현재 진도율은 75%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "이영희 학생 정보 확인해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=이영희>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"이영희\", \"id\": \"S2024-002\", \"course\": \"LLM 파인튜닝\", \"progress\": 90}"
+      },
+      {
+        "role": "assistant",
+        "content": "이영희 학생(S2024-002)은 'LLM 파인튜닝' 과정 수강 중이며, 진도율 90%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "박민수 학생 조회해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=박민수>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"박민수\", \"id\": \"S2024-003\", \"course\": \"LLM 파인튜닝\", \"progress\": 60}"
+      },
+      {
+        "role": "assistant",
+        "content": "박민수 학생(S2024-003)은 진도율 60%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "최유진이 누구야?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=최유진>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"최유진\", \"id\": \"S2024-004\", \"course\": \"LLM 파인튜닝\", \"progress\": 85}"
+      },
+      {
+        "role": "assistant",
+        "content": "최유진 학생(S2024-004)은 'LLM 파인튜닝' 과정을 수강 중이며, 진도율은 85%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "정하윤 학생 어떤 과정 듣고 있어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=정하윤>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"정하윤\", \"id\": \"S2024-005\", \"course\": \"LLM 파인튜닝\", \"progress\": 45}"
+      },
+      {
+        "role": "assistant",
+        "content": "정하윤 학생(S2024-005)은 'LLM 파인튜닝' 과정을 수강 중이며, 진도율은 45%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "송재현 학생 진도율 알려줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=송재현>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"송재현\", \"id\": \"S2024-006\", \"course\": \"LLM 파인튜닝\", \"progress\": 95}"
+      },
+      {
+        "role": "assistant",
+        "content": "송재현 학생(S2024-006)의 진도율은 95%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "한서연 수강 정보 좀 볼게"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=한서연>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"한서연\", \"id\": \"S2024-007\", \"course\": \"LLM 파인튜닝\", \"progress\": 70}"
+      },
+      {
+        "role": "assistant",
+        "content": "한서연 학생(S2024-007)의 진도율은 70%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "오민석 학생 확인"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=오민석>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"오민석\", \"id\": \"S2024-008\", \"course\": \"LLM 파인튜닝\", \"progress\": 55}"
+      },
+      {
+        "role": "assistant",
+        "content": "오민석 학생(S2024-008)의 진도율은 55%입니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "이영희 오늘 출석했어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=이영희 | date=2026-04-02>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"이영희\", \"date\": \"2026-04-02\", \"status\": \"출석\", \"time\": \"09:05\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "이영희 학생은 오늘(2026-04-02) 09:05에 출석했습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "김철수 어제 출석 확인해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=김철수 | date=2026-04-01>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"김철수\", \"date\": \"2026-04-01\", \"status\": \"출석\", \"time\": \"08:55\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "김철수 학생은 어제(2026-04-01) 08:55에 출석했습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "박민수 3월 31일 왔었나?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=박민수 | date=2026-03-31>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"박민수\", \"date\": \"2026-03-31\", \"status\": \"결석\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "박민수 학생은 3월 31일 결석이었습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "최유진 오늘 왔어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=최유진 | date=2026-04-02>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"최유진\", \"date\": \"2026-04-02\", \"status\": \"출석\", \"time\": \"09:00\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "최유진 학생은 오늘 09:00에 출석했습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "정하윤 출석 상태 확인"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=정하윤 | date=2026-04-02>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"정하윤\", \"date\": \"2026-04-02\", \"status\": \"지각\", \"time\": \"09:35\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "정하윤 학생은 오늘 09:35에 지각 처리되었습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "송재현 오늘 출석했나 봐줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=송재현 | date=2026-04-02>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"송재현\", \"date\": \"2026-04-02\", \"status\": \"출석\", \"time\": \"08:50\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "송재현 학생은 오늘 08:50에 출석했습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "한서연 어제 나왔어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=한서연 | date=2026-04-01>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"한서연\", \"date\": \"2026-04-01\", \"status\": \"출석\", \"time\": \"09:10\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "한서연 학생은 어제 09:10에 출석했습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "오민석 3월 28일 출석 기록"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=오민석 | date=2026-03-28>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"name\": \"오민석\", \"date\": \"2026-03-28\", \"status\": \"결석\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "오민석 학생은 3월 28일 결석이었습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "박민수한테 85점 주고 LoRA 실습 잘했다고 코멘트 남겨줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=박민수 | score=85 | comment=LoRA 실습 우수>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"박민수\", \"score\": 85}"
+      },
+      {
+        "role": "assistant",
+        "content": "박민수 학생에게 85점을 등록하고 'LoRA 실습 우수' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "최유진 90점이야 DPO 실습 완벽했어"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=최유진 | score=90 | comment=DPO 실습 완벽>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"최유진\", \"score\": 90}"
+      },
+      {
+        "role": "assistant",
+        "content": "최유진 학생에게 90점을 등록하고 'DPO 실습 완벽' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "김철수 78점 줘 RAG 구현 미흡"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=김철수 | score=78 | comment=RAG 구현 미흡>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"김철수\", \"score\": 78}"
+      },
+      {
+        "role": "assistant",
+        "content": "김철수 학생에게 78점을 등록하고 'RAG 구현 미흡' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "이영희 95점 주고 프로젝트 최우수라고 해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=이영희 | score=95 | comment=프로젝트 최우수>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"이영희\", \"score\": 95}"
+      },
+      {
+        "role": "assistant",
+        "content": "이영희 학생에게 95점을 등록하고 '프로젝트 최우수' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "정하윤 65점 기본 과제만 완료"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=정하윤 | score=65 | comment=기본 과제만 완료>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"정하윤\", \"score\": 65}"
+      },
+      {
+        "role": "assistant",
+        "content": "정하윤 학생에게 65점을 등록하고 '기본 과제만 완료' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "송재현 100점 만점 전 과정 완벽"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=송재현 | score=100 | comment=전 과정 완벽>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"송재현\", \"score\": 100}"
+      },
+      {
+        "role": "assistant",
+        "content": "송재현 학생에게 100점을 등록하고 '전 과정 완벽' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "한서연 82점 줘 양자화 실습 양호"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=한서연 | score=82 | comment=양자화 실습 양호>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"한서연\", \"score\": 82}"
+      },
+      {
+        "role": "assistant",
+        "content": "한서연 학생에게 82점을 등록하고 '양자화 실습 양호' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "오민석 70점 출석 부족 감점"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: submit_grade | name=오민석 | score=70 | comment=출석 부족 감점>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"success\", \"name\": \"오민석\", \"score\": 70}"
+      },
+      {
+        "role": "assistant",
+        "content": "오민석 학생에게 70점을 등록하고 '출석 부족 감점' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "A실습실 GPU 상태 확인해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=A>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"A\", \"gpus\": [{\"id\": 0, \"status\": \"사용중\", \"user\": \"김철수\"}, {\"id\": 1, \"status\": \"사용가능\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "A실습실 GPU 상태입니다:\n- GPU 0: 김철수 학생이 사용 중\n- GPU 1: 사용 가능"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "B실습실 GPU 비어있어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=B>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"B\", \"gpus\": [{\"id\": 0, \"status\": \"사용가능\"}, {\"id\": 1, \"status\": \"사용가능\"}, {\"id\": 2, \"status\": \"사용가능\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "B실습실 GPU 3대 모두 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "C실습실 GPU 어떤 상태야"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=C>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"C\", \"gpus\": [{\"id\": 0, \"status\": \"사용중\", \"user\": \"이영희\"}, {\"id\": 1, \"status\": \"사용중\", \"user\": \"박민수\"}, {\"id\": 2, \"status\": \"사용가능\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "C실습실 GPU 상태입니다:\n- GPU 0: 이영희 사용 중\n- GPU 1: 박민수 사용 중\n- GPU 2: 사용 가능"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "D실습실 GPU 현황 알려줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=D>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"D\", \"gpus\": [{\"id\": 0, \"status\": \"점검중\"}, {\"id\": 1, \"status\": \"사용가능\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "D실습실 GPU 상태입니다:\n- GPU 0: 점검 중\n- GPU 1: 사용 가능"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "지금 A실 GPU 쓸 수 있어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=A>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"A\", \"gpus\": [{\"id\": 0, \"status\": \"사용가능\"}, {\"id\": 1, \"status\": \"사용가능\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "A실습실 GPU 2대 모두 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "B실 GPU 누가 쓰고 있어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=B>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"B\", \"gpus\": [{\"id\": 0, \"status\": \"사용중\", \"user\": \"최유진\"}, {\"id\": 1, \"status\": \"사용가능\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "B실습실 GPU 상태입니다:\n- GPU 0: 최유진 학생이 사용 중\n- GPU 1: 사용 가능"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "B실습실 GPU 2번 2시간 예약해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: reserve_gpu | room=B | gpu_id=2 | duration=2>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"reserved\", \"room\": \"B\", \"gpu_id\": 2, \"until\": \"15:00\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "B실습실 GPU 2번을 2시간 예약했습니다. 15:00까지 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "A실습실 GPU 0번 3시간 잡아줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: reserve_gpu | room=A | gpu_id=0 | duration=3>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"reserved\", \"room\": \"A\", \"gpu_id\": 0, \"until\": \"16:00\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "A실습실 GPU 0번을 3시간 예약했습니다. 16:00까지 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "C실 GPU 1번 1시간 예약"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: reserve_gpu | room=C | gpu_id=1 | duration=1>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"reserved\", \"room\": \"C\", \"gpu_id\": 1, \"until\": \"14:00\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "C실습실 GPU 1번을 1시간 예약했습니다. 14:00까지 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "D실습실 GPU 0번 4시간 예약해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: reserve_gpu | room=D | gpu_id=0 | duration=4>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"reserved\", \"room\": \"D\", \"gpu_id\": 0, \"until\": \"17:00\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "D실습실 GPU 0번을 4시간 예약했습니다. 17:00까지 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "A실 GPU 1번 30분만 쓸게"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: reserve_gpu | room=A | gpu_id=1 | duration=1>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"reserved\", \"room\": \"A\", \"gpu_id\": 1, \"until\": \"13:30\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "A실습실 GPU 1번을 1시간 예약했습니다. 13:30까지 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "B실 GPU 0번 2시간 잡아"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: reserve_gpu | room=B | gpu_id=0 | duration=2>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"reserved\", \"room\": \"B\", \"gpu_id\": 0, \"until\": \"15:00\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "B실습실 GPU 0번을 2시간 예약했습니다. 15:00까지 사용 가능합니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "Qwen 1.5B 모델로 alpaca 데이터 3에포크 학습 돌려줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: run_training | model=Qwen2.5-1.5B | dataset=alpaca_ko | epochs=3>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"started\", \"job_id\": \"T-20260402-001\", \"estimated_time\": \"15분\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "학습을 시작했습니다.\n- 작업 ID: T-20260402-001\n- 모델: Qwen2.5-1.5B\n- 데이터: alpaca_ko\n- 예상 소요 시간: 15분"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "3B 모델로 tool calling 데이터 5에포크 학습시켜"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: run_training | model=Qwen2.5-3B | dataset=tool_calling | epochs=5>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"started\", \"job_id\": \"T-20260402-002\", \"estimated_time\": \"45분\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "학습을 시작했습니다.\n- 작업 ID: T-20260402-002\n- 모델: Qwen2.5-3B\n- 데이터: tool_calling\n- 예상 소요 시간: 45분"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "7B 모델로 preference 데이터 1에포크만 돌려봐"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: run_training | model=Qwen2.5-7B | dataset=preference | epochs=1>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"started\", \"job_id\": \"T-20260402-003\", \"estimated_time\": \"60분\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "학습을 시작했습니다.\n- 작업 ID: T-20260402-003\n- 모델: Qwen2.5-7B\n- 데이터: preference\n- 예상 소요 시간: 60분"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "1.5B로 domain text 10에포크 CPT 돌려"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: run_training | model=Qwen2.5-1.5B | dataset=domain_text | epochs=10>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"started\", \"job_id\": \"T-20260402-004\", \"estimated_time\": \"20분\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "학습을 시작했습니다.\n- 작업 ID: T-20260402-004\n- 모델: Qwen2.5-1.5B\n- 데이터: domain_text\n- 예상 소요 시간: 20분"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "3B 모델 alpaca 데이터 2에포크 학습"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: run_training | model=Qwen2.5-3B | dataset=alpaca_ko | epochs=2>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"started\", \"job_id\": \"T-20260402-005\", \"estimated_time\": \"30분\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "학습을 시작했습니다.\n- 작업 ID: T-20260402-005\n- 모델: Qwen2.5-3B\n- 데이터: alpaca_ko\n- 예상 소요 시간: 30분"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "1.5B chatml 데이터로 3에포크 파인튜닝 해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: run_training | model=Qwen2.5-1.5B | dataset=chatml_ko | epochs=3>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"status\": \"started\", \"job_id\": \"T-20260402-006\", \"estimated_time\": \"15분\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "학습을 시작했습니다.\n- 작업 ID: T-20260402-006\n- 모델: Qwen2.5-1.5B\n- 데이터: chatml_ko\n- 예상 소요 시간: 15분"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "김철수 정보랑 오늘 출석 여부 같이 알려줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=김철수>>\n<<TOOL: get_attendance | name=김철수 | date=2026-04-02>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"student\": {\"name\": \"김철수\", \"progress\": 75}, \"attendance\": {\"status\": \"출석\", \"time\": \"09:00\"}}"
+      },
+      {
+        "role": "assistant",
+        "content": "김철수 학생 정보입니다:\n- 진도율: 75%\n- 오늘 출석: ✅ 09:00 출석"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "이영희 출석 확인하고 성적도 92점 줘 Unsloth 활용 우수"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_attendance | name=이영희 | date=2026-04-02>>\n<<TOOL: submit_grade | name=이영희 | score=92 | comment=Unsloth 활용 우수>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"attendance\": {\"status\": \"출석\"}, \"grade\": {\"status\": \"success\", \"score\": 92}}"
+      },
+      {
+        "role": "assistant",
+        "content": "이영희 학생은 오늘 출석했으며, 92점을 등록하고 'Unsloth 활용 우수' 코멘트를 남겼습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "A실습실 GPU 확인하고 비어있으면 0번 2시간 예약해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_gpu_status | room=A>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"room\": \"A\", \"gpus\": [{\"id\": 0, \"status\": \"사용가능\"}, {\"id\": 1, \"status\": \"사용중\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "GPU 0번이 사용 가능합니다. 예약하겠습니다.\n<<TOOL: reserve_gpu | room=A | gpu_id=0 | duration=2>>"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "박민수 정보 보여주고 오늘 출석도 확인해"
+      },
+      {
+        "role": "assistant",
+        "content": "<<TOOL: get_student | name=박민수>>\n<<TOOL: get_attendance | name=박민수 | date=2026-04-02>>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"student\": {\"name\": \"박민수\", \"progress\": 60}, \"attendance\": {\"status\": \"지각\", \"time\": \"09:40\"}}"
+      },
+      {
+        "role": "assistant",
+        "content": "박민수 학생 정보입니다:\n- 진도율: 60%\n- 오늘 출석: ⚠️ 09:40 지각"
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "LoRA에서 rank를 높이면 어떤 효과가 있어?"
+      },
+      {
+        "role": "assistant",
+        "content": "LoRA에서 rank(r)를 높이면 학습 가능한 파라미터가 늘어납니다. r=8보다 r=16이 더 많은 패턴을 학습할 수 있지만, 메모리 사용량도 증가합니다. 일반적으로 r=16이 성능과 효율의 균형이 좋습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "안녕하세요 오늘 수업 잘 부탁드립니다"
+      },
+      {
+        "role": "assistant",
+        "content": "안녕하세요! 오늘 수업도 열심히 진행하겠습니다. 궁금한 점이 있으면 언제든 질문해주세요."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "QLoRA가 뭐야?"
+      },
+      {
+        "role": "assistant",
+        "content": "QLoRA는 모델을 4bit로 양자화하여 로드한 뒤 LoRA 어댑터만 학습하는 기법입니다. 일반 LoRA보다 GPU 메모리를 크게 절약할 수 있어 RTX 4060 같은 8GB GPU에서도 7B 모델을 파인튜닝할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "오늘 배운 내용 정리해줘"
+      },
+      {
+        "role": "assistant",
+        "content": "오늘은 Tool Calling 파인튜닝을 학습했습니다. 소형 모델에 커스텀 도구 호출 능력을 부여하는 방법을 실습했으며, 데이터 포맷팅과 LoRA 학습 과정을 다뤘습니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "gradient checkpointing이 뭐야?"
+      },
+      {
+        "role": "assistant",
+        "content": "Gradient checkpointing은 GPU 메모리를 절약하는 기법입니다. 순전파 시 중간 활성화 값을 저장하지 않고, 역전파 시 필요할 때 다시 계산합니다. 메모리는 절약되지만 학습 속도가 약 20% 느려집니다."
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 교육기관 LMS 어시스턴트입니다.\n사용 가능한 도구:\n- get_student(name: str) -> 수강생 정보 조회\n- get_attendance(name: str, date: str) -> 출석 조회\n- submit_grade(name: str, score: int, comment: str) -> 성적 등록\n- get_gpu_status(room: str) -> 실습실 GPU 상태 조회\n- reserve_gpu(room: str, gpu_id: int, duration: int) -> GPU 예약\n- run_training(model: str, dataset: str, epochs: int) -> 학습 실행\n도구 호출 시 반드시 <<TOOL: 함수명 | key=value>> 형식을 사용하세요."
+      },
+      {
+        "role": "user",
+        "content": "수고하셨습니다 다음 시간에 봐요"
+      },
+      {
+        "role": "assistant",
+        "content": "수고하셨습니다! 다음 시간에도 좋은 실습 시간이 되길 바랍니다. 복습 중 궁금한 점이 있으면 언제든 질문해주세요."
+      }
+    ]
+  }
+]
