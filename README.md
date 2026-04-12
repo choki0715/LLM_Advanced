@@ -12,8 +12,8 @@
 ### 1. 저장소 복제
 
 ```bash
-git clone https://github.com/choki0715/LLM_Lecture.git
-cd LLM_Lecture
+git clone https://github.com/choki0715/LLM_Advanced.git
+cd LLM_Advanced
 ```
 
 ### 2. 환경 설정 (자동)
@@ -90,7 +90,7 @@ source venv/bin/activate
 ## 폴더 구조
 
 ```
-LLM_Lecture/
+LLM_Advanced/
 ├── setup.sh                              # 환경 자동 설정 스크립트
 ├── setup_check.ipynb                     # 환경 점검 노트북
 ├── .env.example                          # API 키 템플릿
